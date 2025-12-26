@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>CODEX BAC</title>
+
+  <script src="https://telegram.org/js/telegram-web-app.js"></script>
+
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="main-view">
+    <header class="top-bar">
+      <h1>CODEX BAC</h1>
+    </header>
+
+    <main class="cards-container">
+      <div class="card orange" onclick="openStreams('البكالوريات السابقة')">
+        <div class="card-header">
+          <span>البكالوريات السابقة</span>
+          <span class="icon">📁</span>
+        </div>
+        <p>بنك البكالوريات الشامل من 2008 إلى 2025</p>
+      </div>
+
+      <div class="card green" onclick="openStreams('QUIZ')">
+        <div class="card-header">
+          <span>QUIZ</span>
+          <span class="icon">❓📖</span>
+        </div>
+        <p>اختبر نفسك بأسئلة تفاعلية في جميع المواد</p>
+      </div>
+
+      <div class="card red">
+        <div class="card-header">
+          <span>بنك أخطاء شائعة</span>
+          <span class="icon">⚠️</span>
+        </div>
+        <p>أخطاء شائعة في كل مادة وكيف تتجنبها</p>
+      </div>
+
+      <div class="card purple">
+        <div class="card-header">
+          <span>ملخصات الدروس</span>
+          <span class="icon">📚</span>
+        </div>
+        <p>ملخصات وخريطة ذهنية لكل المواد</p>
+      </div>
+    </main>
+</div>
+
+<section id="streams-view" class="hidden">
+    <div class="streams-header">
+        <h2 id="view-title">اختر الشعبة</h2>
+    </div>
+
+    <div class="streams-grid">
+        <div class="stream-item science" onclick="selectStream('علوم تجريبية')">علوم تجريبية</div>
+        <div class="stream-item tech" onclick="selectStream('تقني رياضي')">تقني رياضي</div>
+        <div class="stream-item math" onclick="selectStream('رياضيات')">رياضيات</div>
+        <div class="stream-item economy" onclick="selectStream('تسيير و اقتصاد')">تسيير و اقتصاد</div>
+        <div class="stream-item languages" onclick="selectStream('لغات اجنبية')">لغات اجنبية</div>
+        <div class="stream-item philosophy" onclick="selectStream('اداب و فلسفة')">اداب و فلسفة</div>
+    </div>
+</section>
+
+<script src="script.js"></script>
+<script>
+  const tg = window.Telegram.WebApp;
+  tg.ready();
+  tg.expand();
+</script>
+
+</body>
+</html>

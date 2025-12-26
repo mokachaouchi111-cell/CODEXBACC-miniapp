@@ -1,0 +1,139 @@
+:root {
+  --bg: #050b2e;
+  --bar: #1a0b8a;
+  --text: #ffffff;
+  
+  /* ألوان الشعب المحدثة */
+  --sci-color: #7bed9f;
+  --tech-color: #4da3ff;
+  --math-color: #ff4757;
+  --eco-color: #f39c12;
+  --lang-color: #a55eea;
+  --phil-color: #eccc68;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Cairo", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  overflow-x: hidden;
+}
+
+/* Header */
+.top-bar {
+  background: linear-gradient(90deg, #0a0066, #1a0b8a);
+  padding: 18px;
+  text-align: center;
+}
+
+.top-bar h1 {
+  margin: 0;
+  font-size: 28px;
+  letter-spacing: 1px;
+}
+
+/* Cards layout */
+.cards-container {
+  padding: 18px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+/* Card */
+.card {
+  border-radius: 18px;
+  padding: 22px; /* زيادة الطول قليلاً */
+  box-shadow: 0 8px 18px rgba(0,0,0,0.35);
+  cursor: pointer;
+  transition: transform 0.1s;
+}
+
+.card:active {
+  transform: scale(0.97);
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.card p {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.6;
+  opacity: 0.95;
+}
+
+/* Colors */
+.orange { background: linear-gradient(135deg, #ff9800, #ffb300); }
+.green  { background: linear-gradient(135deg, #5ecb2f, #7ee000); }
+.red    { background: linear-gradient(135deg, #e60000, #ff3b3b); }
+.purple { background: linear-gradient(135deg, #b000c8, #ff2fa0); }
+
+/* واجهة اختيار الشعب (تنسيق الكبسولة الملونة) */
+#streams-view {
+    padding: 20px;
+    animation: fadeIn 0.3s ease;
+}
+
+.streams-header {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.streams-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* عمودين */
+    gap: 15px;
+}
+
+.stream-item {
+    height: 75px;
+    border-radius: 35px; /* شكل الكبسولة المكتمل */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #000; /* نص أسود للوضوح فوق الألوان */
+    font-weight: 800;
+    font-size: 16px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    transition: transform 0.1s;
+}
+
+.stream-item:active {
+    transform: scale(0.95);
+}
+
+/* ألوان الشعب الستة */
+.science { background-color: var(--sci-color); }
+.tech    { background-color: var(--tech-color); }
+.math    { background-color: var(--math-color); }
+.economy { background-color: var(--eco-color); }
+.languages { background-color: var(--lang-color); }
+.philosophy { background-color: var(--phil-color); }
+
+/* Helpers */
+.hidden { display: none !important; }
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive */
+@media (min-width: 600px) {
+  .cards-container {
+    grid-template-columns: 1fr 1fr;
+  }
+}
