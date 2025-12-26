@@ -4,11 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>CODEX BAC</title>
-
   <script src="https://telegram.org/js/telegram-web-app.js"></script>
-
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@600;700;800&display=swap" rel="stylesheet">
-
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -37,7 +34,7 @@
 
       <div class="card red">
         <div class="card-header">
-          <span>بنك أخطاء شائعة</span>
+          <span>بنك الأخطاء الشائعة</span>
           <span class="icon">⚠️</span>
         </div>
         <p>أخطاء شائعة في كل مادة وكيف تتجنبها</p>
@@ -57,7 +54,6 @@
     <div class="streams-header">
         <h2 id="view-title">اختر الشعبة</h2>
     </div>
-
     <div class="streams-grid">
         <div class="stream-item science" onclick="selectStream('علوم تجريبية')">علوم تجريبية</div>
         <div class="stream-item tech" onclick="selectStream('تقني رياضي')">تقني رياضي</div>
@@ -68,11 +64,28 @@
     </div>
 </section>
 
+<section id="materials-view" class="hidden">
+    <div class="streams-header">
+        <h2 id="selected-stream-title">المواد</h2>
+    </div>
+    <div id="materials-grid" class="icons-grid">
+        </div>
+</section>
+
 <script src="script.js"></script>
 <script>
   const tg = window.Telegram.WebApp;
   tg.ready();
   tg.expand();
+  
+  // تفعيل زر العودة الخاص بتلجرام للرجوع للخلف
+  tg.BackButton.onClick(() => {
+      if (!document.getElementById('materials-view').classList.contains('hidden')) {
+          backToStreams();
+      } else if (!document.getElementById('streams-view').classList.contains('hidden')) {
+          backToMain();
+      }
+  });
 </script>
 
 </body>

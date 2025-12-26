@@ -48,7 +48,7 @@ body {
 /* Card */
 .card {
   border-radius: 18px;
-  padding: 22px; /* زيادة الطول قليلاً */
+  padding: 22px; 
   box-shadow: 0 8px 18px rgba(0,0,0,0.35);
   cursor: pointer;
   transition: transform 0.1s;
@@ -80,8 +80,8 @@ body {
 .red    { background: linear-gradient(135deg, #e60000, #ff3b3b); }
 .purple { background: linear-gradient(135deg, #b000c8, #ff2fa0); }
 
-/* واجهة اختيار الشعب (تنسيق الكبسولة الملونة) */
-#streams-view {
+/* واجهة اختيار الشعب */
+#streams-view, #materials-view {
     padding: 20px;
     animation: fadeIn 0.3s ease;
 }
@@ -93,17 +93,17 @@ body {
 
 .streams-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr; /* عمودين */
+    grid-template-columns: 1fr 1fr;
     gap: 15px;
 }
 
 .stream-item {
     height: 75px;
-    border-radius: 35px; /* شكل الكبسولة المكتمل */
+    border-radius: 35px;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #000; /* نص أسود للوضوح فوق الألوان */
+    color: #000;
     font-weight: 800;
     font-size: 16px;
     cursor: pointer;
@@ -115,13 +115,62 @@ body {
     transform: scale(0.95);
 }
 
-/* ألوان الشعب الستة */
+/* ألوان الشعب */
 .science { background-color: var(--sci-color); }
 .tech    { background-color: var(--tech-color); }
 .math    { background-color: var(--math-color); }
 .economy { background-color: var(--eco-color); }
 .languages { background-color: var(--lang-color); }
 .philosophy { background-color: var(--phil-color); }
+
+/* --- الجزء الجديد الخاص بأيقونات المواد (كانفا) --- */
+.icons-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 أعمدة مثل طلبك */
+    gap: 20px;
+    padding: 10px;
+    justify-items: center;
+}
+
+.material-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.material-icon-card {
+    width: 80px;
+    height: 80px;
+    background: #0056b3; /* اللون الأزرق الموحد للدائرة */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+    transition: transform 0.1s;
+}
+
+.material-icon-card:active {
+    transform: scale(0.9);
+}
+
+.material-icon-card img {
+    width: 55px; /* حجم الأيقونة الشفافة داخل الدائرة */
+    height: 55px;
+    object-fit: contain;
+}
+
+.mat-label {
+    margin-top: 10px;
+    color: var(--text);
+    font-size: 12px;
+    font-weight: 700;
+    text-align: center;
+    line-height: 1.3;
+}
+/* ------------------------------------------ */
 
 /* Helpers */
 .hidden { display: none !important; }
